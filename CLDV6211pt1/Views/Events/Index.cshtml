@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CLDV6211pt1.Models.Events>
+
+@{
+    ViewData["Title"] = "Events Index";
+}
+
+<h1>Events</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Event</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Date</th>
+            <th>Venue ID</th>
+            <th>Event Type</th>
+            <th>Description</th>
+            <th>Ticket Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EventName</td>
+                <td>@item.EventDate</td>
+                <td>@item.VenueID</td>
+                <td>@item.EventType</td>
+                <td>@item.Description</td>
+                <td>@item.TicketPrice</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EventID" class="btn btn-warning">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EventID" class="btn btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EventID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CLDV6211pt1</title>
+
+    <!-- Bootstrap & CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CLDV6211pt1.styles.css" asp-append-version="true" />
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o3L1cNYwB/OH+1qlmS0Hujp+iD3dAHTi1aVqk/B+G1LzHqEXQ8rFfsjxDHmPzKcN4a7RXWj/5ZLXp0epXzWyWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom Dark Theme -->
+    <style>
+        body {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: #222;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #00ffc8 !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #00e1ff !important;
+        }
+
+        .footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: #00bfff;
+        }
+
+        .footer a:hover {
+            color: #00e1ff;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .tech-icons i {
+            font-size: 2rem;
+            color: #00ffc8;
+            transition: transform 0.3s ease, color 0.3s;
+        }
+
+        .tech-icons i:hover {
+            transform: scale(1.2);
+            color: #00e1ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CLDV6211pt1</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Venues" asp-action="Index">Venues</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="Index">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Bookings" asp-action="Index">Bookings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted mt-5">
+        <div class="container">
+            &copy; 2025 - CLDV6211pt1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

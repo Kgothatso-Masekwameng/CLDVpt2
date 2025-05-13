@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+    color: #e0e0e0;
+    }
+
+    .hero-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #111;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    .hero-section h1 {
+    font-size: 3.5rem;
+    color: #00ffc8;
+    text-shadow: 0 0 10px #00ffc8;
+    }
+
+    .hero-section p {
+    font-size: 1.2rem;
+    color: #ccc;
+    }
+
+    .hero-section a {
+    color: #00bfff;
+    text-decoration: none;
+    }
+
+    .hero-section a:hover {
+    color: #00e1ff;
+    text-decoration: underline;
+    }
+
+    .tech-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    }
+
+    .tech-icons i {
+    font-size: 2.5rem;
+    color: #00ffc8;
+    transition: transform 0.3s ease, color 0.3s;
+    }
+
+    .tech-icons i:hover {
+    transform: scale(1.2);
+    color: #00e1ff;
+    }
+
+    .hero-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="hero-section">
+        <h1><i class="fas fa-laptop-code me-2"></i>Welcome to TechWorld</h1>
+        <p class="mt-3">
+            Learn about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">building Web apps with ASP.NET Core</a>
+        </p>
+
+        <div class="tech-icons mt-4">
+            <i class="fab fa-html5" title="HTML5"></i>
+            <i class="fab fa-css3-alt" title="CSS3"></i>
+            <i class="fab fa-js-square" title="JavaScript"></i>
+            <i class="fab fa-github" title="GitHub"></i>
+            <i class="fas fa-server" title="Backend"></i>
+            <i class="fas fa-shield-alt" title="Security"></i>
+        </div>
+
+        <img src="https://source.unsplash.com/1600x400/?technology,dark" alt="Tech Banner" class="hero-image mt-5" />
+    </div>
+</div>

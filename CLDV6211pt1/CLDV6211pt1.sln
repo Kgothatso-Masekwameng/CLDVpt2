@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLDV6211pt1", "CLDV6211pt1.csproj", "{266AD18D-A8C6-4ED2-9EDC-2B35B7C0CCA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{266AD18D-A8C6-4ED2-9EDC-2B35B7C0CCA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{266AD18D-A8C6-4ED2-9EDC-2B35B7C0CCA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{266AD18D-A8C6-4ED2-9EDC-2B35B7C0CCA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{266AD18D-A8C6-4ED2-9EDC-2B35B7C0CCA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

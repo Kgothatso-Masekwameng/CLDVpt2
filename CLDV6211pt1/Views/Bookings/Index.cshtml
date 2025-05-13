@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CLDV6211pt1.Models.Bookings>
+
+@{
+    ViewData["Title"] = "Bookings Index";
+}
+<form asp-controller="Bookings" asp-action="Index" method="get">
+    <input type="text" name="searchString" placeholder="Search by Event Name..." class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+</form>
+<h1>Bookings</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Booking</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Booking Date</th>
+            <th>Seats Booked</th>
+            <th>Status</th>
+            <th>Event</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerID</td>
+                <td>@item.BookingDate</td>
+                <td>@item.SeatsBooked</td>
+                <td>@item.BookingStatus</td>
+                <td>@item.Events?.EventName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookingID" class="btn btn-warning">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BookingID" class="btn btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BookingID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
