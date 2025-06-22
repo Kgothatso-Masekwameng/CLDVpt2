@@ -18,8 +18,8 @@ namespace CLDV6211pt1.Controllers
         // Azure Blob Upload Helper
         private async Task<string> UploadImageToBlobAsync(IFormFile imageFile)
         {
-            var connectionString = "DefaultEndpointsProtocol=https;AccountName=cldvmason;AccountKey=BBLSqqFu1GynHwGAR5uU9ALXoxfCD25pW+gav31halX9GFv9bLCczKiYb3Awao3wgOoO4EbfpFql+AStN8MtGQ==;EndpointSuffix=core.windows.net";
-            var containerName = "cldvmason";
+            var connectionString = "DefaultEndpointsProtocol=https;AccountName=mason9;AccountKey=nMjhx1QSG7xlbGlotTOzdwcJqnY4r7hAIMTJB22xqfX8zK4X5lRFvESSuKVZbuoz4kRc/fgAotmX+AStHPHTVg==;EndpointSuffix=core.windows.net";
+            var containerName = "mase";
 
             var blobServiceClient = new BlobServiceClient(connectionString);
             var containerClient = blobServiceClient.GetBlobContainerClient(containerName);

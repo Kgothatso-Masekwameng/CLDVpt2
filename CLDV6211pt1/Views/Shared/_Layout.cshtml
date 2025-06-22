@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CLDV6211pt1.styles.css" asp-append-version="true" />
 
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o3L1cNYwB/OH+1qlmS0Hujp+iD3dAHTi1aVqk/B+G1LzHqEXQ8rFfsjxDHmPzKcN4a7RXWj/5ZLXp0epXzWyWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom Dark Theme -->
@@ -36,19 +36,19 @@
         .footer {
             background-color: #111;
             color: #ccc;
-            padding: 20px 0;
+            padding: 1px 0;
         }
 
-        .footer a {
-            color: #00bfff;
-        }
+            .footer a {
+                color: #00bfff;
+            }
 
-        .footer a:hover {
-            color: #00e1ff;
-        }
+                .footer a:hover {
+                    color: #00e1ff;
+                }
 
         .container {
-            margin-top: 50px;
+            margin-top: 5px;
         }
 
         .tech-icons i {
@@ -57,10 +57,24 @@
             transition: transform 0.3s ease, color 0.3s;
         }
 
-        .tech-icons i:hover {
-            transform: scale(1.2);
-            color: #00e1ff;
+            .tech-icons i:hover {
+                transform: scale(1.2);
+                color: #00e1ff;
+            }
+
+        /* Ensure all submit buttons are visible */
+        input[type="submit"],
+        button[type="submit"] {
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
+
+        /* Ensure buttons work with dark background */
+        .btn-primary, .btn-secondary {
+            color: #fff !important;
+        }
+
     </style>
 </head>
 <body>
@@ -76,16 +90,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Venues" asp-action="Index">Venues</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Venues" asp-action="Index">Venues</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="Index">Events</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Events" asp-action="Index">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bookings" asp-action="Index">Bookings</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Bookings" asp-action="Index">Bookings</a>
                         </li>
                     </ul>
                 </div>

@@ -2,6 +2,7 @@
 using CLDV6211pt1.Models;
 using EventEase.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CLDV6211pt1.Controllers
 {
@@ -13,13 +14,42 @@ namespace CLDV6211pt1.Controllers
         {
             _context = context;
         }
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string eventType, string searchName, DateTime? eventDate)
         {
-            var events = _context.Events.ToList();
+            var query = _context.Events
+                .Include(e => e.Venue)
+                .AsQueryable();
+
+            // Filter by Event Type
+            if (!string.IsNullOrEmpty(eventType))
+            {
+                query = query.Where(e => e.EventType == eventType);
+            }
+
+            // Filter by Event Name
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                query = query.Where(e => e.EventName.Contains(searchName));
+            }
+
+            // Filter by Specific Date
+            if (eventDate.HasValue)
+            {
+                query = query.Where(e => e.EventDate.Date == eventDate.Value.Date);
+            }
+
+            var eventTypes = await _context.Events
+                .Select(e => e.EventType)
+                .Distinct()
+                .ToListAsync();
+
+            ViewBag.EventTypes = new SelectList(eventTypes);
+            ViewBag.CurrentSearch = searchName;
+            ViewBag.CurrentDate = eventDate?.ToString("yyyy-MM-dd"); // Format for date input value
+
+            var events = await query.ToListAsync();
             return View(events);
         }
-
         public IActionResult Create()
         {
             return View();
